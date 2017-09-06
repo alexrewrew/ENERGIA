@@ -1,0 +1,25 @@
+@import "../../utilities/vars"
+@import "../../utilities/mixins"
+
+/* LINKS */
+a
+  text-decoration none
+  transitions()
+  &:hover
+    text-decoration none
+  &:focus
+    text-decoration none
+
+.link-up
+  position fixed
+  right 15px
+  bottom 15px
+  width 30px
+  height 30px
+  display flex
+  justify-content center
+  align-items center
+  opacity 0
+
+.link-up.visible
+  opacity 1

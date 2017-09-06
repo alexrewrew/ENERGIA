@@ -1,0 +1,151 @@
+//- layouts/layout.pug
+extend layouts/_layout.pug
+
+block title
+    | ENERGIA - Головна сторінка
+
+block content
+
+    section
+        .section-relative
+            .container
+                .advantages
+                    .row.justify-content-center
+                        .col-12
+                            h2.black Наші переваги:
+                        .col-md-6.col-lg-4
+                            .advantage
+                                img(src='img/icons/icon1.svg' title='' alt='' onerror='this.src="img/icons/icon1.png"')
+                                h3 Надійність
+                                p Коефіцієнт биття та пошкоджень авто за 21 рік роботи - ???
+                        .col-md-6.col-lg-4
+                            .advantage
+                                img(src='img/icons/icon2.svg' title='' alt='' onerror='this.src="img/icons/icon2.png"')
+                                h3 Швидкість
+                                p Ваш вантаж прибуває в найкоротші строки
+                        .col-md-6.col-lg-4
+                            .advantage
+                                img(src='img/icons/icon3.svg' title='' alt='' onerror='this.src="img/icons/icon3.png"')
+                                h3 Безпека
+                                p Перевезення автовозами - максимально безпечне для авто
+                        .col-md-6.col-lg-4
+                            .advantage
+                                img(src='img/icons/icon4.svg' title='' alt='' onerror='this.src="img/icons/icon4.png"')
+                                h3 Прозорість
+                                p GPS на кожному автовозі - ви завжди знаєте, де ваш вантаж
+                        .col-md-6.col-lg-4
+                            .advantage
+                                img(src='img/icons/icon5.svg' title='' alt='' onerror='this.src="img/icons/icon5.png"')
+                                h3 Доступність
+                                p Гнучка система знижок для наших клієнтів
+                        .col-md-6.col-lg-4
+                            .advantage
+                                img(src='img/icons/icon1.svg' title='' alt='' onerror='this.src="img/icons/icon1.png"')
+                                h3 Досвід ???
+                                p Перевезення автовозами - максимально безпечне для авто
+                .row.justify-content-between
+                    .col-md-6.col-lg-5
+                        .slider
+                            .slide-col
+                                img(src='img/slider/slider1.png' title='' alt='')
+                                span span 1
+                            .slide-col
+                                img(src='img/slider/slider1.png' title='' alt='')
+                                span span 2
+                            .slide-col
+                                img(src='img/slider/slider1.png' title='' alt='')
+                                span span 3
+                        img(src='img/illus/shadow.png').shadow
+
+                    .col-6
+                        h2.black.text-left Наш автопарк
+                        p У власності компанії 50 транспортних засобів. Це сучасні багатофункціональні автовози марок Scania, Hyundai, Isuzu. Кожен з них проходить більше ???-ти технічних перевірок на рік
+                        span.slider-counter
+
+    section#drivers
+        .container
+            .row.justify-content-center
+                .col-12
+                    h2 Наші водії
+                    img(src='img/illus/drivers.png' title='' alt='').img-middle
+                .col-5
+                    h3.gray Професіоналізм
+                    p Наша команда - висококваліфіковані водії 1 і 2-го класу з багаторічним досвідом міжнародних перевезень. Кожен з них пройшов жорсткий відбір згідно всіх вимог управління вантажним спеціалізованим автотранспортом. Запорука їх професіоналізму - систематичні навчання, стажування та комфорті умови праці.
+                .col-5
+                    h3.gray Відповідальність
+                    p З метою підвищення безпеки та ефективності роботи, на 1 автовозі працюють 2 водія з графіком роботи не більше 20 днів. Вся діяльність компанії здійснюється в суворій відповідності з українським та міжнародним законодавством.
+
+    section
+        .section-relative2
+            .container
+                .clients
+                    .row.justify-content-center
+                        .col-12
+                            h2.black Наші клієнти
+                            ul.client-logos
+                                li
+                                    img(src='img/clients/client1.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client2.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client3.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client4.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client5.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client6.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client7.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client8.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client9.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client10.png' title='' alt='')
+                                li
+                                    img(src='img/clients/client11.png' title='' alt='')
+                        .col-5
+                            h4 Фактичний обсяг перевезень
+                            ul
+                                li 2015 рік —
+                                    span.red-bold  11460
+                                    |  автомобілів
+                                li 2016 рік — ???
+                        .col-5
+                            h4 Потенційний обсяг перевезень
+                            p до
+                                span.red-bold  50000
+                                |  автомобілів на рік
+    section#services
+        .container
+            .row.justify-content-center
+                .col-md-11.col-lg-8
+                    h2 Послуги
+                    .service
+                        .service--description
+                            h3 Перевезення автомобілів
+                            p Перевезення за допомогою автовозів - найбільш поширений і безпечний спосіб одночасної доставки декількох машин.
+                        .service--image
+                            img(src='img/illus/service1.png' title='' alt='' onerror='this.src="img/illus/service1.png"')
+                    .service
+                        .service--description
+                            h3 Перевезення VIP автомобілів
+                            p Наші фахівці надзвичайно обережно завантажують, доставляють та розвантажують транспорт, тому нам довіряють перевезення авто найвищого класу.
+                        .service--image
+                            img(src='img/illus/service2.png' title='' alt='' onerror='this.src="img/illus/service2.png"')
+
+    section#contacts
+        .container
+            .contacts
+                .row.justify-content-center
+                    .col-md-10  .col-lg-8
+                        h2.black Зв`язатися з нами
+                        form
+                            input(type='text' placeholder='Введіть ім`я')
+                            input(type='email' placeholder='E-mail')
+                            textarea(placeholder='Текст повідомлення')
+                            button(type='submit').button Відправіти
+
+
+

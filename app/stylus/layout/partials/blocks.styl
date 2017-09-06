@@ -1,0 +1,42 @@
+@import '../../utilities/vars'
+@import '../../utilities/mixins'
+
+/* SECTIONS AND ARTICLES */
+section {}
+
+article {}
+
+aside {}
+
+main
+  background $white
+  transitions()
+  +mobile()
+    position relative
+    z-index 100
+
+.section-relative
+  position relative
+  top -124px
+  z-index 100
+  height 1125px
+  +portrait()
+    height auto
+
+.section-relative2
+  position relative
+  top -124px
+  z-index 100
+
+
+#drivers
+  background $gray-back
+  padding-top 220px
+  padding-bottom 306px
+  p
+    color $white
+
+#services
+  background $gray-back
+  padding-top 145px
+  padding-bottom 267px

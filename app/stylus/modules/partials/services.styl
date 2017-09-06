@@ -1,0 +1,29 @@
+.service
+  display flex
+  flex-direction row
+  flex-wrap nowrap
+  padding-top 42px
+  padding-bottom 54px
+  justify-content space-between
+  &--description
+    order 1
+    flex 1 1 60%
+    max-width 60%
+    h3
+      color $gray-text2
+    p
+      color $white
+  &--image
+    order 2
+    flex 1 1 30%
+    max-width 30%
+  &:nth-child(even)
+    .service--description
+      order 1
+    .service--image
+      order 2
+  &:nth-child(odd)
+    .service--description
+      order 2
+    .service--image
+      order 1

@@ -1,0 +1,39 @@
+@import "../../utilities/vars"
+@import "../../utilities/mixins"
+
+/* FOOTER */
+footer
+  background $gray-back
+  padding-top 80px
+  .logo
+    margin-bottom 50px
+    img
+      max-width 130px
+      width 100%
+  h3
+    line-height 1
+    letter-spacing: 3px;
+  p
+    font-size .75em
+    line-height: 1.67;
+    margin-bottom 40px
+  a
+    text-decoration underline
+    color $white
+
+.copyright
+  p
+    font-size .875em
+    margin-bottom 12px
+
+.volta
+  cursor pointer
+  display inline-block
+  svg
+    margin-left 2px
+    g
+      fill $white
+      transitions()
+  &:hover
+    svg g
+      fill $red

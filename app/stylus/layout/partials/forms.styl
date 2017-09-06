@@ -1,0 +1,49 @@
+@import '../../utilities/vars'
+@import '../../utilities/mixins'
+
+/* FORMS */
+form
+  display flex
+  flex-wrap wrap
+  justify-content space-between
+  padding-top 8px
+
+/* INPUTS */
+input
+  flex 1 1 48%
+  max-width 48%
+  border 2px solid $gray-back2
+  background $gray-back2
+  line-height: 1.25;
+  padding 13px 30px 15px
+  margin-bottom 30px
+  transitions()
+  &:focus
+    outline none
+    border-bottom-color $red
+  +placeholder()
+    color $gray-text4
+    font-weight 300
+
+input.error, textarea.error
+  border-color $red2
+
+textarea
+  resize none
+  flex 1 1 100%
+  max-width 100%
+  border 2px solid $trans
+  background $gray-back2
+  line-height: 1.25;
+  padding 13px 32px 15px
+  margin-bottom 30px
+  height: 125px;
+  transitions()
+  &:focus
+    outline none
+    border-bottom-color $red
+  +placeholder()
+    color $gray-text4
+    font-weight 300
+
+label {}
