@@ -18,6 +18,9 @@ input
   padding 13px 30px 15px
   margin-bottom 30px
   transitions()
+  +mobile()
+    flex 1 1 100%
+    max-width 100%
   &:focus
     outline none
     border-bottom-color $red
@@ -47,3 +50,21 @@ textarea
     font-weight 300
 
 label {}
+
+.flex-container
+  display flex
+  height 239px
+  justify-content center
+  align-items center
+  text-align center
+  +mobile()
+    height: 321px;
+  p
+    color $gray-text4
+  img
+    margin-bottom 22px
+
+.form-hidden
+  display none
+.form-visible
+  display block

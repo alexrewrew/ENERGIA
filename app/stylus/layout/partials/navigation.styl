@@ -11,9 +11,13 @@ nav
   right 0
   z-index 200
   padding 27px 0
+  +mobile()
+    padding 7px 0
 
 nav.scroll
   padding 10px 0 4px
+  +mobile()
+    padding 7px 0
 
 .logo
   display: block
@@ -23,10 +27,11 @@ nav.scroll
 
 .nav-panel
   +mobile()
-    background $white
+    background $gray-back
     height 100vh
     display none
     overflow-y scroll
+    width: calc(100% - 60px)
 
 .nav-mobile
   display none
@@ -42,12 +47,16 @@ nav.scroll
   align-items: center;
   +mobile()
     flex-direction column
+    margin 20px 0
   li
     a
       display block
       font-size .875em
       color $gray-text
       padding-bottom: 7px;
+      +mobile()
+        font-size 1.25em
+        margin-bottom 15px
       &:hover
         color $white
       &:focus
@@ -62,6 +71,8 @@ nav.scroll
       padding-bottom: 2px;
       +portrait()
         letter-spacing 1px
+      +mobile()
+        font-size 1.25em
       &:hover
         border-bottom-color $trans
         opacity .8
@@ -72,7 +83,7 @@ nav.scroll
   width 30px
   height 22px
   position relative
-  margin 14px 0
+  margin: 7px 0;
   cursor pointer
   transitions()
   transform rotate(0deg)
@@ -82,7 +93,7 @@ nav.scroll
     position absolute
     height 3px
     width 100%
-    background $black
+    background $white
     border-radius 2px
     opacity 1
     left 0

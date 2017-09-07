@@ -22,6 +22,8 @@ main
   height 1125px
   +portrait()
     height auto
+  +mobile()
+    height auto
 
 .section-relative2
   position relative
@@ -29,14 +31,16 @@ main
   z-index 100
 
 
-#drivers
+.drivers
   background $gray-back
   padding-top 220px
   padding-bottom 306px
   p
     color $white
+    +mobile()
+      margin-bottom 60px
 
-#services
+.services
   background $gray-back
   padding-top 145px
   padding-bottom 267px

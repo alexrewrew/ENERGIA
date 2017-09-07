@@ -12,7 +12,7 @@ block content
                 .advantages
                     .row.justify-content-center
                         .col-12
-                            h2.black Наші переваги:
+                            h2.black#advantages Наші переваги:
                         .col-md-6.col-lg-4
                             .advantage
                                 img(src='img/icons/icon1.svg' title='' alt='' onerror='this.src="img/icons/icon1.png"')
@@ -57,21 +57,21 @@ block content
                                 span span 3
                         img(src='img/illus/shadow.png').shadow
 
-                    .col-6
-                        h2.black.text-left Наш автопарк
+                    .col-md-6
+                        h2.black.text-left#autopark Наш автопарк
                         p У власності компанії 50 транспортних засобів. Це сучасні багатофункціональні автовози марок Scania, Hyundai, Isuzu. Кожен з них проходить більше ???-ти технічних перевірок на рік
                         span.slider-counter
 
-    section#drivers
+    section.drivers
         .container
             .row.justify-content-center
                 .col-12
-                    h2 Наші водії
+                    h2#drivers Наші водії
                     img(src='img/illus/drivers.png' title='' alt='').img-middle
-                .col-5
+                .col-md-5
                     h3.gray Професіоналізм
                     p Наша команда - висококваліфіковані водії 1 і 2-го класу з багаторічним досвідом міжнародних перевезень. Кожен з них пройшов жорсткий відбір згідно всіх вимог управління вантажним спеціалізованим автотранспортом. Запорука їх професіоналізму - систематичні навчання, стажування та комфорті умови праці.
-                .col-5
+                .col-md-5
                     h3.gray Відповідальність
                     p З метою підвищення безпеки та ефективності роботи, на 1 автовозі працюють 2 водія з графіком роботи не більше 20 днів. Вся діяльність компанії здійснюється в суворій відповідності з українським та міжнародним законодавством.
 
@@ -81,7 +81,7 @@ block content
                 .clients
                     .row.justify-content-center
                         .col-12
-                            h2.black Наші клієнти
+                            h2.black#clients Наші клієнти
                             ul.client-logos
                                 li
                                     img(src='img/clients/client1.png' title='' alt='')
@@ -105,23 +105,23 @@ block content
                                     img(src='img/clients/client10.png' title='' alt='')
                                 li
                                     img(src='img/clients/client11.png' title='' alt='')
-                        .col-5
+                        .col-md-5
                             h4 Фактичний обсяг перевезень
                             ul
                                 li 2015 рік —
                                     span.red-bold  11460
                                     |  автомобілів
                                 li 2016 рік — ???
-                        .col-5
+                        .col-md-5
                             h4 Потенційний обсяг перевезень
                             p до
                                 span.red-bold  50000
                                 |  автомобілів на рік
-    section#services
+    section.services
         .container
             .row.justify-content-center
                 .col-md-11.col-lg-8
-                    h2 Послуги
+                    h2#services Послуги
                     .service
                         .service--description
                             h3 Перевезення автомобілів
@@ -135,17 +135,25 @@ block content
                         .service--image
                             img(src='img/illus/service2.png' title='' alt='' onerror='this.src="img/illus/service2.png"')
 
-    section#contacts
+    section
         .container
             .contacts
                 .row.justify-content-center
-                    .col-md-10  .col-lg-8
-                        h2.black Зв`язатися з нами
-                        form
-                            input(type='text' placeholder='Введіть ім`я')
-                            input(type='email' placeholder='E-mail')
-                            textarea(placeholder='Текст повідомлення')
-                            button(type='submit').button Відправіти
+                    .col-md-10.col-lg-8
+                        .form-visible
+                            h2.black#contacts Зв`язатися з нами
+                            form
+                                input(type='text' placeholder='Введіть ім`я')
+                                input(type='email' placeholder='E-mail')
+                                textarea(placeholder='Текст повідомлення')
+                                button(type='submit').button Відправіти
+                        .form-hidden
+                            h2.black Замовити послугу
+                            .flex-container
+                                div
+                                    img(src='img/icons/mail.svg' title='' alt='' onerror='this.src="img/icons/mail.png"')
+                                    p Дякуємо, ваша заявка відправлена
+                            a(href='' title='' alt='').button.button-hidden Добре
 
 
 

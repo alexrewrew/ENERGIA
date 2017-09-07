@@ -5,10 +5,15 @@
   padding-top 42px
   padding-bottom 54px
   justify-content space-between
+  +mobile()
+    flex-wrap wrap
   &--description
     order 1
     flex 1 1 60%
     max-width 60%
+    +mobile()
+      flex 1 1 100%
+      max-width 100%
     h3
       color $gray-text2
     p
@@ -17,13 +22,20 @@
     order 2
     flex 1 1 30%
     max-width 30%
+    +mobile()
+      flex 1 1 100%
+      max-width 100%
+    text-align center
   &:nth-child(even)
     .service--description
       order 1
     .service--image
       order 2
+
   &:nth-child(odd)
     .service--description
       order 2
     .service--image
       order 1
+      +mobile()
+        order 3

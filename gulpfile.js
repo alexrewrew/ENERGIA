@@ -29,7 +29,7 @@ gulp.task("stylus", function () {
             return "An error occurred while compiling stylus.\nLook in the console for details.\n" + error;
         })))
         .pipe(autoprefixer({
-            browsers: ["last 10 versions", "ie 8", "ie 9", "ie 10"],
+            browsers: ["last 5 versions", "ie 8", "ie 9", "ie 10"],
             cascade: false
         }))
         .pipe(csscomb())

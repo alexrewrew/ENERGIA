@@ -1,5 +1,8 @@
 .slider
   position relative
+  +mobile()
+    padding-bottom 65px
+    margin-bottom 75px
   &-arrow
     background $red
     max-width 132px
@@ -20,12 +23,16 @@
       right -377px
     +portrait()
       right -292px
+    +mobile()
+      left 132px
   .arrow-left
     right -260px
     +tablet()
       right -245px
     +portrait()
       right -160px
+    +mobile()
+      left 0
 
 .slide-col
   position relative
@@ -47,6 +54,8 @@
   width calc(100% + 30px)
   +portrait()
     display none
+  +mobile()
+    display none
 
 .slider-counter
   position absolute
@@ -55,3 +64,6 @@
   letter-spacing: 1.5px;
   font-weight 700
   color $gray-text5
+  +mobile()
+    bottom auto
+    top -55px

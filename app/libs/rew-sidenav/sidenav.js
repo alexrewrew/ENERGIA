@@ -2,8 +2,8 @@
 
 $(document).ready(function () {
     //left-right menu
-    $(".nav-icon").click(function () {
-        event.preventDefault();
+    $(".nav-icon").click(function (e) {
+        e.preventDefault();
         $(this).toggleClass("open");
         $("main").toggleClass("open");
         $("nav").toggleClass("open");
