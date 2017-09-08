@@ -13252,17 +13252,14 @@ $(document).ready(function () {
     $(".nav-icon").click(function (e) {
         e.preventDefault();
         $(this).toggleClass("open");
-        $("main").toggleClass("open");
-        $("nav").toggleClass("open");
-        $("html, body").toggleClass("open-nav");
+        $("body").toggleClass("open");
     });
 
     $("main").click(function () {
-        if ($(this).hasClass("open")) {
-            $(this).toggleClass("open");
+        if ($('body').hasClass("open")) {
+            $('body').toggleClass("open");
             $(".nav-icon").toggleClass("open");
-            $("nav").toggleClass("open");
-            $("html,body").toggleClass("open-nav");
+            enableScroll()
         }
     });
 
@@ -13276,110 +13273,166 @@ $(document).ready(function () {
         }
     });
 
+    $('#disable').click(function () {
+        if($(this).hasClass('open')) {
+            disableScroll();
+        } else {
+            enableScroll();
+        }
+    });
+
+    var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+    function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault)
+            e.preventDefault();
+        e.returnValue = false;
+    }
+
+    function preventDefaultForScrollKeys(e) {
+        if (keys[e.keyCode]) {
+            preventDefault(e);
+            return false;
+        }
+    }
+
+    function disableScroll() {
+        if (window.addEventListener) // older FF
+            window.addEventListener('DOMMouseScroll', preventDefault, false);
+        window.onwheel = preventDefault; // modern standard
+        window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+        window.ontouchmove  = preventDefault; // mobile
+        document.onkeydown  = preventDefaultForScrollKeys;
+    }
+
+    function enableScroll() {
+        if (window.removeEventListener)
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+        window.onmousewheel = document.onmousewheel = null;
+        window.onwheel = null;
+        window.ontouchmove = null;
+        document.onkeydown = null;
+    }
+
     if (window.matchMedia("(max-width: 767px)").matches) {
-        // $("nav").prependTo("body");
-        // $(".nav-panel").prependTo("body");
 
         //left-right menu
         $(".smooth").click(function () {
-            $("main").toggleClass("open");
-            $("nav").toggleClass("open");
+            $("body").toggleClass("open");
             $(".nav-icon").toggleClass("open");
-            $("html,body").toggleClass("open-nav");
+            enableScroll();
         });
 
     }
 })
 $(document).ready(function () {
-        "use strict";
+    "use strict";
 
-        // $("#modal").iziModal({
-        //     title:'Any random text',
-        // });
-        // $(document).on('click', '.trigger', function (event) {
-        //     event.preventDefault();
-        //     $('#modal').iziModal('open');
-        // });
+    // $("#modal").iziModal({
+    //     title:'Any random text',
+    // });
+    // $(document).on('click', '.trigger', function (event) {
+    //     event.preventDefault();
+    //     $('#modal').iziModal('open');
+    // });
 
-        // $(".inline").modaal();
-
-        $('.slider').on('init reInit afterChange', function (event, slick, currentSlide) {
-            var i = (currentSlide ? currentSlide : 0) + 1;
-            $('.slider-counter').text(i + '/' + slick.slideCount);
-        });
-
-        $(".slider").slick({
-            slide: ".slide-col",
-            nextArrow: '<div class="slider-arrow arrow-right"><img src="img/slider/arrow-right.svg"/></div>',
-            prevArrow: '<div class="slider-arrow arrow-left"><img src="img/slider/arrow-left.svg"/></div>'
-        });
+    // $(".inline").modaal();
 
 
-        // $(".owl-carousel").owlCarousel();
+    // document.addEventListener('touchmove', function(e) {e.preventDefault();}, true);
 
-        // $(".animsition").animsition({
-        //     inClass: "fade-in",
-        //     outClass: "fade-out",
-        //     inDuration: 1500,
-        //     outDuration: 800,
-        //     linkElement: ".animsition-link",
-        //     // e.g. linkElement: "a:not([target="_blank"]):not([href^="#"])"
-        //     loading: true,
-        //     loadingParentElement: "body", //animsition wrapper element
-        //     loadingClass: "animsition-loading",
-        //     loadingInner: "", // e.g "<img src="loading.svg" />"
-        //     timeout: false,
-        //     timeoutCountdown: 5000,
-        //     onLoadEvent: true,
-        //     browser: ["animation-duration", "-webkit-animation-duration"],
-        //     // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-        //     // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-        //     overlay: false,
-        //     overlayClass: "animsition-overlay-slide",
-        //     overlayParentElement: "body",
-        //     transition: function (url) {
-        //         window.location.href = url;
-        //     }
-        // });
-
-        $(window).scroll(function () {
-            if ($(this).scrollTop() > 100) {
-                // $(".link-up").addClass("visible");
-                $('nav').addClass('scroll');
-            }
-            else {
-                // $(".link-up").removeClass("visible");
-                $('nav').removeClass('scroll');
-            }
-        });
+    // document.body.addEventListener('touchmove',function(event){event.preventDefault();},false);
+    // $(document).bind('touchmove', false);
 
 
-        $(".smooth").click(function (event) {
-            event.preventDefault();
-            // $('.smooth').removeClass('active');
-            // $(this).addClass('active')
-            var id = $(this).attr("href"),
-                top = $(id).offset().top - 141;
-            $("body,html").animate({
-                scrollTop: top
-            }, 1500);
-        });
+    $('.slider').on('init reInit afterChange', function (event, slick, currentSlide) {
+        var i = (currentSlide ? currentSlide : 0) + 1;
+        $('.slider-counter').text(i + '/' + slick.slideCount);
+    });
+
+    $(".slider").slick({
+        slide: ".slide-col",
+        nextArrow: '<div class="slider-arrow arrow-right"><img src="img/slider/arrow-right.svg"/></div>',
+        prevArrow: '<div class="slider-arrow arrow-left"><img src="img/slider/arrow-left.svg"/></div>'
+    });
 
 
-        //responsive scripts
-        $(window).on('load resize', function () {
-            if (window.matchMedia("(max-width: 767px)").matches) {
-                $(".smooth").click(function () {
-                    $('nav-icon').removeClass("open");
-                    $("main").removeClass("open");
-                    $("nav").removeClass("open");
-                    $("html, body").removeClass("open-nav");
-                });
-            }
+    // $(".owl-carousel").owlCarousel();
 
-        });
-    }
-)
-;
+    // $(".animsition").animsition({
+    //     inClass: "fade-in",
+    //     outClass: "fade-out",
+    //     inDuration: 1500,
+    //     outDuration: 800,
+    //     linkElement: ".animsition-link",
+    //     // e.g. linkElement: "a:not([target="_blank"]):not([href^="#"])"
+    //     loading: true,
+    //     loadingParentElement: "body", //animsition wrapper element
+    //     loadingClass: "animsition-loading",
+    //     loadingInner: "", // e.g "<img src="loading.svg" />"
+    //     timeout: false,
+    //     timeoutCountdown: 5000,
+    //     onLoadEvent: true,
+    //     browser: ["animation-duration", "-webkit-animation-duration"],
+    //     // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    //     // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    //     overlay: false,
+    //     overlayClass: "animsition-overlay-slide",
+    //     overlayParentElement: "body",
+    //     transition: function (url) {
+    //         window.location.href = url;
+    //     }
+    // });
+
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+            // $(".link-up").addClass("visible");
+            $('nav').addClass('scroll');
+        }
+        else {
+            // $(".link-up").removeClass("visible");
+            $('nav').removeClass('scroll');
+        }
+    });
+
+
+    $(".smooth").click(function (event) {
+        event.preventDefault();
+        // $('.smooth').removeClass('active');
+        // $(this).addClass('active')
+        var id = $(this).attr("href"),
+            top = $(id).offset().top - 141;
+        $("body,html").animate({
+            scrollTop: top
+        }, 1500);
+    });
+
+    // $('.nav-icon').click(function () {
+    //     disableScroll();
+    // })
+
+
+    // document.getElementById("disable").onclick = function() {
+    //     disableScroll();
+    //     // document.getElementById("status").innerHTML = "disabled";
+    //     // document.getElementById("status").className = "disabled";
+    // };
+
+
+
+
+    //responsive scripts
+    $(window).on('load resize', function () {
+        if (window.matchMedia("(max-width: 767px)").matches) {
+            $(".smooth").click(function () {
+                $('nav-icon').removeClass("open");
+                $("main").removeClass("open");
+                $("nav").removeClass("open");
+                $("html, body").removeClass("open-nav");
+            });
+        }
+    });
+});
 
 

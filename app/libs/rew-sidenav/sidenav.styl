@@ -1,16 +1,24 @@
 //left-right menu
-main.open
-  transform translateX(calc(-100% + 60px))
-
-nav.open
-  transform translateX(calc(-100% + 60px))
-
 +mobile()
   .nav-panel
     display block
     position fixed
     top 0
-    left 60px
+    //left 60px
     right 0
     bottom 0
     z-index 100
+    height 100vh
+    width: calc(100% - 60px)
+    left calc(100vw) !important
+
+body.open
+  main
+    transform translateX(calc(-100% + 60px))
+
+  nav
+    transform translateX(calc(-100% + 60px))
+
+  .nav-panel
+    +mobile()
+      transform translate(calc(-100vw + 60px))

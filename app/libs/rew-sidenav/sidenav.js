@@ -5,17 +5,14 @@ $(document).ready(function () {
     $(".nav-icon").click(function (e) {
         e.preventDefault();
         $(this).toggleClass("open");
-        $("main").toggleClass("open");
-        $("nav").toggleClass("open");
-        $("html, body").toggleClass("open-nav");
+        $("body").toggleClass("open");
     });
 
     $("main").click(function () {
-        if ($(this).hasClass("open")) {
-            $(this).toggleClass("open");
+        if ($('body').hasClass("open")) {
+            $('body').toggleClass("open");
             $(".nav-icon").toggleClass("open");
-            $("nav").toggleClass("open");
-            $("html,body").toggleClass("open-nav");
+            enableScroll()
         }
     });
 
@@ -29,16 +26,55 @@ $(document).ready(function () {
         }
     });
 
+    $('#disable').click(function () {
+        if($(this).hasClass('open')) {
+            disableScroll();
+        } else {
+            enableScroll();
+        }
+    });
+
+    var keys = {37: 1, 38: 1, 39: 1, 40: 1};
+
+    function preventDefault(e) {
+        e = e || window.event;
+        if (e.preventDefault)
+            e.preventDefault();
+        e.returnValue = false;
+    }
+
+    function preventDefaultForScrollKeys(e) {
+        if (keys[e.keyCode]) {
+            preventDefault(e);
+            return false;
+        }
+    }
+
+    function disableScroll() {
+        if (window.addEventListener) // older FF
+            window.addEventListener('DOMMouseScroll', preventDefault, false);
+        window.onwheel = preventDefault; // modern standard
+        window.onmousewheel = document.onmousewheel = preventDefault; // older browsers, IE
+        window.ontouchmove  = preventDefault; // mobile
+        document.onkeydown  = preventDefaultForScrollKeys;
+    }
+
+    function enableScroll() {
+        if (window.removeEventListener)
+            window.removeEventListener('DOMMouseScroll', preventDefault, false);
+        window.onmousewheel = document.onmousewheel = null;
+        window.onwheel = null;
+        window.ontouchmove = null;
+        document.onkeydown = null;
+    }
+
     if (window.matchMedia("(max-width: 767px)").matches) {
-        // $("nav").prependTo("body");
-        // $(".nav-panel").prependTo("body");
 
         //left-right menu
         $(".smooth").click(function () {
-            $("main").toggleClass("open");
-            $("nav").toggleClass("open");
+            $("body").toggleClass("open");
             $(".nav-icon").toggleClass("open");
-            $("html,body").toggleClass("open-nav");
+            enableScroll();
         });
 
     }
