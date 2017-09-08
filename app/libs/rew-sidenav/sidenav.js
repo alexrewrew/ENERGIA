@@ -69,13 +69,11 @@ $(document).ready(function () {
     }
 
     if (window.matchMedia("(max-width: 767px)").matches) {
-
         //left-right menu
         $(".smooth").click(function () {
             $("body").toggleClass("open");
             $(".nav-icon").toggleClass("open");
             enableScroll();
         });
-
     }
 })

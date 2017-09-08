@@ -3,6 +3,8 @@
   padding-top 83px
   padding-bottom 68px
   +mobile()
+    padding-top 77px
+    padding-bottom 0
     ul, p
       margin-bottom 60px
 
@@ -22,8 +24,15 @@
     +mobile()
       flex 1 1 50%
       max-width 50%
+    +portrait()
+      flex 1 1 25%
+      max-width 25%
     img
       filter grayscale(100%)
       transitions()
+      +mobile()
+        filter grayscale(0)
+      +portrait()
+        filter grayscale(0)
       &:hover
         filter grayscale(0)

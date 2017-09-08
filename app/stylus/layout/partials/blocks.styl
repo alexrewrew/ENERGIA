@@ -24,17 +24,23 @@ main
     height auto
   +mobile()
     height auto
+    top -100px
 
 .section-relative2
   position relative
   top -124px
   z-index 100
+  +mobile()
+    top -100px
 
 
 .drivers
   background $gray-back
   padding-top 220px
   padding-bottom 306px
+  +mobile()
+    padding-top 160px
+    padding-bottom 200px
   p
     color $white
     +mobile()
@@ -44,3 +50,6 @@ main
   background $gray-back
   padding-top 145px
   padding-bottom 267px
+  +mobile()
+    padding-top 160px
+    padding-bottom 200px

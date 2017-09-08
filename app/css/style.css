@@ -2690,6 +2690,11 @@ h1 {
 	text-align: center;
 	margin-bottom: 10px;
 }
+@media (max-width: 767px) {
+	h1 {
+		margin-bottom: 30px;
+	}
+}
 h2 {
 	font-size: 1.875em;
 	font-weight: 700;
@@ -2698,6 +2703,11 @@ h2 {
 	text-align: center;
 	margin-bottom: 44px;
 	line-height: 1;
+}
+@media (max-width: 767px) {
+	h2 {
+		font-size: 1.75em;
+	}
 }
 h3 {
 	font-size: 1.25em;
@@ -2863,6 +2873,7 @@ main {
 @media (max-width: 767px) {
 	.section-relative {
 		height: auto;
+		top: -100px;
 	}
 }
 .section-relative2 {
@@ -2870,10 +2881,21 @@ main {
 	top: -124px;
 	z-index: 100;
 }
+@media (max-width: 767px) {
+	.section-relative2 {
+		top: -100px;
+	}
+}
 .drivers {
 	background: #292929;
 	padding-top: 220px;
 	padding-bottom: 306px;
+}
+@media (max-width: 767px) {
+	.drivers {
+		padding-top: 160px;
+		padding-bottom: 200px;
+	}
 }
 .drivers p {
 	color: #fff;
@@ -2888,6 +2910,12 @@ main {
 	padding-top: 145px;
 	padding-bottom: 267px;
 }
+@media (max-width: 767px) {
+	.services {
+		padding-top: 160px;
+		padding-bottom: 200px;
+	}
+}
 header {
 	background: #292929;
 	padding-top: 150px;
@@ -2896,6 +2924,7 @@ header {
 @media (max-width: 767px) {
 	header {
 		padding-top: 120px;
+		padding-bottom: 260px;
 	}
 }
 header p {
@@ -3126,6 +3155,11 @@ footer p {
 	margin-bottom: 40px;
 	color: #fff;
 }
+@media (max-width: 767px) {
+	footer p {
+		font-size: 1em;
+	}
+}
 footer a {
 	text-decoration: underline;
 	color: #fff;
@@ -3322,6 +3356,12 @@ button.button, .button.button-hidden {
 	width: 100%;
 	margin-bottom: 174px;
 }
+@media (max-width: 767px) {
+	.img-header {
+		width: 150%;
+		margin-left: -50%;
+	}
+}
 .img-middle {
 	width: 100%;
 	margin-bottom: 45px;
@@ -3366,7 +3406,7 @@ button.button, .button.button-hidden {
 }
 @media (max-width: 767px) {
 	.slider .arrow-right {
-		left: 132px;
+		right: 0;
 	}
 }
 .slider .arrow-left {
@@ -3444,12 +3484,19 @@ button.button, .button.button-hidden {
 }
 @media (max-width: 767px) {
 	.advantages {
+		padding-top: 77px;
 		padding-left: 30px;
 		padding-right: 30px;
 	}
 }
 .advantage {
 	padding: 20px 30px 40px;
+}
+@media (max-width: 767px) {
+	.advantage {
+		padding-right: 0;
+		padding-left: 0;
+	}
 }
 .advantage img {
 	display: block;
@@ -3465,6 +3512,10 @@ button.button, .button.button-hidden {
 	padding-bottom: 68px;
 }
 @media (max-width: 767px) {
+	.clients {
+		padding-top: 77px;
+		padding-bottom: 0;
+	}
 	.clients ul, .clients p {
 		margin-bottom: 60px;
 	}
@@ -3504,10 +3555,30 @@ button.button, .button.button-hidden {
 		max-width: 50%;
 	}
 }
+@media (min-width: 768px) and (max-width: 991px) {
+	.client-logos li {
+		-webkit-flex: 1 1 25%;
+		    -ms-flex: 1 1 25%;
+		        flex: 1 1 25%;
+		max-width: 25%;
+	}
+}
 .client-logos li img {
 	-webkit-filter: grayscale(100%);
 	        filter: grayscale(100%);
 	transition: all .4s ease;
+}
+@media (max-width: 767px) {
+	.client-logos li img {
+		-webkit-filter: grayscale(0);
+		        filter: grayscale(0);
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+	.client-logos li img {
+		-webkit-filter: grayscale(0);
+		        filter: grayscale(0);
+	}
 }
 .client-logos li img:hover {
 	-webkit-filter: grayscale(0);
@@ -3567,7 +3638,6 @@ button.button, .button.button-hidden {
 	    -ms-flex: 1 1 30%;
 	        flex: 1 1 30%;
 	max-width: 30%;
-	text-align: center;
 }
 @media (max-width: 767px) {
 	.service--image {
@@ -3575,6 +3645,8 @@ button.button, .button.button-hidden {
 		    -ms-flex: 1 1 100%;
 		        flex: 1 1 100%;
 		max-width: 100%;
+		text-align: center;
+		margin-bottom: 30px;
 	}
 }
 .service:nth-child(even) .service--description {
@@ -3582,10 +3654,24 @@ button.button, .button.button-hidden {
 	-ms-flex-order: 1;
 	        order: 1;
 }
+@media (max-width: 767px) {
+	.service:nth-child(even) .service--description {
+		-webkit-order: 2;
+		-ms-flex-order: 2;
+		        order: 2;
+	}
+}
 .service:nth-child(even) .service--image {
 	-webkit-order: 2;
 	-ms-flex-order: 2;
 	        order: 2;
+}
+@media (max-width: 767px) {
+	.service:nth-child(even) .service--image {
+		-webkit-order: 1;
+		-ms-flex-order: 1;
+		        order: 1;
+	}
 }
 .service:nth-child(odd) .service--description {
 	-webkit-order: 2;
@@ -3597,17 +3683,16 @@ button.button, .button.button-hidden {
 	-ms-flex-order: 1;
 	        order: 1;
 }
-@media (max-width: 767px) {
-	.service:nth-child(odd) .service--image {
-		-webkit-order: 3;
-		-ms-flex-order: 3;
-		        order: 3;
-	}
-}
 .contacts {
 	position: relative;
 	top: -125px;
 	background: #fff;
 	padding-top: 85px;
 	padding-bottom: 75px;
+}
+@media (max-width: 767px) {
+	.contacts {
+		top: -100px;
+		padding-top: 76px;
+	}
 }
