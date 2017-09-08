@@ -3328,6 +3328,12 @@ textarea::-webkit-input-placeholder {
 .form-visible {
 	display: block;
 }
+.error-p {
+	width: 100%;
+	color: #eb0029;
+	text-align: center;
+	display: none;
+}
 .button {
 	color: #fff;
 	background: #eb0029;
