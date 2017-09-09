@@ -132,7 +132,7 @@ gulp.task("audio", function () {
 });
 
 //build
-gulp.task("develope", ["fonts", "video", "imagemin", "minify-css", "compress", "minify-html"], function () {
+gulp.task("develope", ["fonts", "video", 'php', 'audio', "imagemin", "minify-css", "compress", "minify-html"], function () {
 });
 
 gulp.task("build", function(callback) {
