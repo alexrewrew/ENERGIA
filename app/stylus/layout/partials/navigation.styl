@@ -13,6 +13,8 @@ nav
   padding 27px 0
   +mobile()
     padding 7px 0
+    .container
+      width 100%
 
 nav.scroll
   padding 10px 0 4px
@@ -30,6 +32,10 @@ nav.scroll
   +mobile()
     background $gray-back
     display none
+  +landscape()
+    display: flex !important
+    justify-content: center;
+    align-items: center;
 
 .nav-mobile
   display none
@@ -46,7 +52,14 @@ nav.scroll
   +mobile()
     flex-direction column
     margin 20px 0
+  +landscape()
+    flex-direction row
+    flex-wrap wrap
+
   li
+    +landscape()
+      flex 1 1 50%
+      max-width 50%
     a
       display block
       font-size .875em
@@ -71,6 +84,8 @@ nav.scroll
         letter-spacing 1px
       +mobile()
         font-size 1.25em
+      +landscape()
+        display inline-block
       &:hover
         border-bottom-color $trans
         opacity .8

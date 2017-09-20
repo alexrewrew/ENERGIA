@@ -31,6 +31,12 @@ footer
   p
     font-size .875em
     margin-bottom 12px
+  +mobile()
+    .col-6
+      &:first-child
+        padding-right 0
+      &:last-child
+        padding-left 0
 
 .volta
   cursor pointer
@@ -42,4 +48,4 @@ footer
       transitions()
   &:hover
     svg g
-      fill $red
+      fill #7521E1

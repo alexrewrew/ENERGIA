@@ -2,7 +2,7 @@
   position relative
   +mobile()
     padding-bottom 65px
-    margin-bottom 75px
+    margin-bottom 90px
   &-arrow
     background $red
     max-width 132px
@@ -37,13 +37,14 @@
 .slide-col
   position relative
   z-index 3
-  span
-    position absolute
-    bottom 0
-    left 0
-    z-index -1
-    display none
-
+  height 341px
+  display flex !important
+  justify-content center
+  align-items center
+  overflow hidden
+  img
+    width 100%
+    display block
 
 .shadow
   position absolute
@@ -66,4 +67,4 @@
   color $gray-text5
   +mobile()
     bottom auto
-    top -55px
+    top -70px
