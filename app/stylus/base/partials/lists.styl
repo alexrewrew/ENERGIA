@@ -11,3 +11,24 @@ ol
   padding 0
   margin 0
   li {}
+
+.ul-regular
+  margin: 23px 0 40px
+  li
+    position relative
+    padding-left 19px
+    margin-bottom 2px
+    &:before
+      pseudo(block, absolute)
+      left 0
+      top 9px
+      width: 5px;
+      height: 5px;
+      background $red
+      border-radius 50%
+
+.ul-white
+  li
+    color $white
+    &:before
+      background $white
