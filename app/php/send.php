@@ -25,7 +25,7 @@ if (!empty($_POST)) {
     $arUsers = array(
         array(
             "NAME" => "ENERGIA",
-            "EMAIL" => "maxkovalburn@gmail.com" //change email here
+            "EMAIL" => "info@energia.ltd" //change email here
         )
     );
 
