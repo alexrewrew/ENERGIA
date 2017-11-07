@@ -2848,6 +2848,11 @@ hr {
 	margin-bottom: 20px;
 	padding-top: 3px;
 }
+@media (max-width: 767px) {
+	.text-center br {
+		display: none;
+	}
+}
 .text-justify {
 	text-align: justify !important;
 }
