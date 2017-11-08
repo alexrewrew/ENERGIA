@@ -2849,7 +2849,7 @@ hr {
 	padding-top: 3px;
 }
 @media (max-width: 767px) {
-	.text-center br {
+	.text-center br:first-child {
 		display: none;
 	}
 }

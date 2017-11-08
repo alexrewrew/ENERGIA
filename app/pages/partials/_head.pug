@@ -4,32 +4,29 @@ head
     meta(http-equiv='X-UA-Compatible', content='IE=9;IE=10;IE=Edge,chrome=1')
     meta(name='viewport', content='width=device-width, initial-scale=1, user-scalable=no')
     meta(name='format-detection', content='telephone=no')
-    meta(name='robots', content='noindex')
+    meta(name='robots', content='ALL')
     meta(name='rating', content='GENERAL')
 
     base(href='')
-    meta(name='title', content='')
-    meta(name='description', content='')
-    meta(name='keywords', content='')
-    meta(name='subject', content='')
-    meta(name='author', content='')
-    meta(name='language', content='')
+    meta(name='title', content='Energia')
+    meta(name='description', content='Надійно, безпечно, своєчасно. Понад 20 років досвіду. Обсяг — до 50 000 авто на рік. Перевезення VIP авто.')
+    meta(name='keywords', content='Перевезення, автоперевезення, energia')
+    meta(name='author', content='Volta Agency')
+    meta(name='language', content='uk')
 
     // ogp facebook
-    meta(property='og:site_name', content='')
-    meta(property='og:title', content='')
-    meta(property='og:description', content='')
+    meta(property='og:title', content='Energia')
+    meta(property='og:description', content='Надійно, безпечно, своєчасно. Понад 20 років досвіду. Обсяг — до 50 000 авто на рік. Перевезення VIP авто.')
     meta(property='og:type', content='website')
     meta(property='og:image:type', content='image/png')
-    meta(property='og:url', content='')
-    meta(property='og:image', content='img/ogp/FB_OGP.png')
-    meta(property='fb:pages', content='')
+    meta(property='og:url', content='http://energia.ltd')
+    meta(property='og:image', content='http://energia.ltd/img/ogp/FB_OGP.png')
 
     // ogp twitter
     meta(name='twitter:card', content='summary')
-    meta(name='twitter:title', content='')
-    meta(name='twitter:image:src', content='img/ogp/TW_OGP.png')
-    meta(name='twitter:description', content='')
+    meta(name='twitter:title', content='Energia')
+    meta(name='twitter:image:src', content='http://energia.ltd/img/ogp/TW_OGP.png')
+    meta(name='twitter:description', content='Надійно, безпечно, своєчасно. Понад 20 років досвіду. Обсяг — до 50 000 авто на рік. Перевезення VIP авто.')
     link(rel='canonical' href='')
 
     // title
@@ -65,3 +62,27 @@ head
         script(src='https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js')
     <![endif]-->
+
+    script(type="application/ld+json").
+        {
+          "@context": "http://www.schema.org",
+          "@type": "AutomotiveBusiness",
+          "name": "Energia",
+          "url": "http://energia.ltd/",
+          "logo": "http://energia.ltd/img/logo/logo.svg",
+          "image": "http://energia.ltd/img/ogp/FB_OGP.png",
+          "description": "Надійно, безпечно, своєчасно. Понад 20 років досвіду. Обсяг — до 50 000 авто на рік. Перевезення VIP авто.",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "вул. Шевченка, буд. 19, корпус А",
+            "addressLocality": "с. Гавронщина",
+            "addressRegion": "Макарівський район, Київська область",
+            "addressCountry": "Україна"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "logist@energy-cars.com.ua",
+            "telephone": "+380504756502",
+            "contactType": "Sales"
+          }
+        }
